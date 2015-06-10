@@ -88,7 +88,6 @@ class lobbyModel extends Model
     }
     
     public function deleteLobby() {
-      // $_sql = "DELETE FROM lobby WHERE idDestination = :idLobby";
       $_sql = "UPDATE lobby SET status = 'Inactive' WHERE idLobby = :idLobby";
       $consulta = $this->db->prepare($_sql);
       $consulta->bindParam(':idLobby', $this->_idLobby, PDO::PARAM_INT);
