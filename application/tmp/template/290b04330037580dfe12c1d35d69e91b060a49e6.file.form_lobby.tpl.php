@@ -1,0 +1,84 @@
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-06-09 00:16:14
+         compiled from "C:\wamp\www\ejemplo\application\views\elements\form_lobby.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:325935575f08e8f4171-01127326%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '290b04330037580dfe12c1d35d69e91b060a49e6' => 
+    array (
+      0 => 'C:\\wamp\\www\\ejemplo\\application\\views\\elements\\form_lobby.tpl',
+      1 => 1433801762,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '325935575f08e8f4171-01127326',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.21-dev',
+  'unifunc' => 'content_5575f08ea6f056_67625524',
+  'variables' => 
+  array (
+    '_textTitle' => 0,
+    '_enumDestination' => 0,
+    'item' => 0,
+    '_arrayData' => 0,
+    '_operation' => 0,
+  ),
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_5575f08ea6f056_67625524')) {function content_5575f08ea6f056_67625524($_smarty_tpl) {?>      <!--default-->
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="modalSaveDefault"><?php echo $_smarty_tpl->tpl_vars['_textTitle']->value;?>
+</h4>
+      </div>
+      <div class="modal-body">
+      <!-- fin default-->
+      <form name="frmLobby" id="frmLobby" method="POST" onsubmit="javascript:void(0)" autocomplete="off">
+        <div class="form-group">
+          <label for="idDestination" class="control-label">Destino:</label>
+          
+            <select name = "idDestination" id="idDestination" class="form-control" >
+          <?php  $_smarty_tpl->tpl_vars['item'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['item']->_loop = false;
+ $_smarty_tpl->tpl_vars['key'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->tpl_vars['_enumDestination']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['item']->key => $_smarty_tpl->tpl_vars['item']->value) {
+$_smarty_tpl->tpl_vars['item']->_loop = true;
+ $_smarty_tpl->tpl_vars['key']->value = $_smarty_tpl->tpl_vars['item']->key;
+?>
+                <option value="<?php echo $_smarty_tpl->tpl_vars['item']->value['idDestination'];?>
+" <?php if ($_smarty_tpl->tpl_vars['item']->value['idDestination']==$_smarty_tpl->tpl_vars['_arrayData']->value['idDestination']) {?> selected="selected"<?php }?>><?php echo $_smarty_tpl->tpl_vars['item']->value['destinationName'];?>
+ </option>
+            <?php }
+if (!$_smarty_tpl->tpl_vars['item']->_loop) {
+?>
+                <option value="">Ningún destino encontrado </option>
+          <?php } ?>
+            </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="lobby_name" class="control-label">Nombre:</label>
+          <input type="text" class="form-control" id="lobby_name" name="lobby_name" required="required" value="<?php echo $_smarty_tpl->tpl_vars['_arrayData']->value['name'];?>
+">
+          <?php if ($_smarty_tpl->tpl_vars['_operation']->value=="update") {?>
+            <input type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['_arrayData']->value['idLobby'];?>
+" id="idLobby" name="idLobby">
+          <?php }?>
+        </div>
+      </form>
+      <!--default-->
+      <div id="stLoader_barMod" style="text-align:center"></div>
+      <div id="txtErrMsgMod" ></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        <button type="button" 
+        <?php if ($_smarty_tpl->tpl_vars['_operation']->value=="update") {?>
+        id="btnUpdate" name="btnUpdate"
+        <?php } else { ?>
+         id="btnSave" name="btnSave"
+        <?php }?> class="btn btn-primary">Guardar</button>
+      </div>
+      <!--fin default--><?php }} ?>
