@@ -97,7 +97,6 @@ class lobbyModel extends Model
     
     public function enumLobby() {
       $_sql = "SELECT * FROM lobby WHERE idDestination = :idDestination AND status = 'Active'";
-      
       $consulta = $this->db->prepare($_sql);
       $consulta->bindParam(':idDestination', $this->getIdDestination(), PDO::PARAM_INT);
       $consulta->execute();
